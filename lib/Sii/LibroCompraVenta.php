@@ -71,6 +71,10 @@ class LibroCompraVenta extends \sasco\LibreDTE\Sii\Base\Libro
      */
     private function normalizarDetalle(array &$detalle)
     {
+
+        // LBR - 3 - Error en Detalle - Falta [MntNeto MntExe MntIVA] en Documentos que modificar razon social CSV
+        $detalle = array_map('strval', $detalle);
+        
         // agregar nodos (esto para mantener orden del XML)
         $detalle = array_merge([
             'TpoDoc' => false,
