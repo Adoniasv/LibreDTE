@@ -379,7 +379,8 @@ class Sii
             'Cookie: TOKEN='.$token,
             'Accept-Encoding' => 'gzip, deflate, sdch',
         ];
-        $url = 'https://'.$servidor.'.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ce_empresas_dwnld_'.date('Ymd').'.csv';
+        // Archivo del día anterior -1 days
+        $url = 'https://'.$servidor.'.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ce_empresas_dwnld_'. date('Ymd', strtotime('-1 day')) .'.csv';
         curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
