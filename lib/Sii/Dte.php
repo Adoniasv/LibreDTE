@@ -1226,7 +1226,8 @@ class Dte
      * @param datos Arreglo con los datos del documento que se desean normalizar
      * @warning Revisar como se aplican descuentos y recargos, ¿debería ser un porcentaje del monto original?
      * @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
-     * @version 2016-06-23
+     * @revision Adonias Vasquez, (adonias.vasquez[at]epys.cl)
+     * @version 2017-01-02
      */
     private function normalizar_detalle(array &$datos)
     {
@@ -1245,6 +1246,7 @@ class Dte
                 'UnmdRef' => false,
                 'PrcRef' => false,
                 'QtyItem' => false,
+                'Subcantidad' => false, // 2017-01-02 - Subcantidades para facturas de combustible
                 'UnmdItem' => false,
                 'PrcItem' => false,
                 'DescuentoPct' => false,
